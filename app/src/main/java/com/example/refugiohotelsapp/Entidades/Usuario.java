@@ -1,13 +1,13 @@
 package com.example.refugiohotelsapp.Entidades;
 
-public class usuario {
+ class Usuario {
 
     private Integer idUsuario;
     private String nome;
     private String email;
     private String senha;
 
-    public usuario(Integer idUsuario, String nome, String email, String senha) {
+    public Usuario(Integer idUsuario, String nome, String email, String senha) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.email = email;

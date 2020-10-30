@@ -2,7 +2,7 @@ package com.example.refugiohotelsapp.Entidades;
 
 import java.util.Date;
 
-public class reserva {
+    class Reserva {
     private int idReserva;
     private Date dataInicio;
     private Date dataFim;
@@ -11,10 +11,11 @@ public class reserva {
     private float valorReserva;
     private String metodoPagamento;
     private boolean reservaAtiva;
-    private usuario usuario;
+    private Usuario usuario;
 
-    public reserva(int idReserva, Date dataInicio, Date dataFim, int quantidadeAdultos, int quantidadeCriancas,
-                   float valorReserva, String metodoPagamento, boolean reservaAtiva, com.example.refugiohotelsapp.Entidades.usuario usuario) {
+    //Construtor utilizado para trazer o objeto reserva do banco
+    public Reserva(int idReserva, Date dataInicio, Date dataFim, int quantidadeAdultos, int quantidadeCriancas,
+                   float valorReserva, String metodoPagamento, boolean reservaAtiva, Usuario usuario) {
         this.idReserva = idReserva;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
@@ -24,8 +25,30 @@ public class reserva {
         this.metodoPagamento = metodoPagamento;
         //pensar na lógica booleana da flag reservaAtiva, instânciar o objeto já com a flag ativa em 1?
         //pensar e criar função para alterar estado quando a reserva for cancelada
-        this.reservaAtiva = reservaAtiva;
         this.usuario = usuario;
+        this.reservaAtiva = true;
+    }
+
+    //Construtor utilizado para criar o objeto reserva em banco
+    public Reserva(Date dataInicio, Date dataFim, int quantidadeAdultos, int quantidadeCriancas,
+                   float valorReserva, String metodoPagamento, Usuario usuario) {
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        this.quantidadeAdultos = quantidadeAdultos;
+        this.quantidadeCriancas = quantidadeCriancas;
+        this.valorReserva = valorReserva;
+        this.metodoPagamento = metodoPagamento;
+        this.usuario = usuario;
+        this.reservaAtiva = true;
+
+    }
+    //construtor para reserva com problema
+    public Reserva() {
+        this.reservaAtiva = false;
+    }
+
+    public boolean cancelaReserva(){
+        return reservaAtiva = false;
     }
 
     public int getIdReserva() {
@@ -92,11 +115,11 @@ public class reserva {
         this.reservaAtiva = reservaAtiva;
     }
 
-    public com.example.refugiohotelsapp.Entidades.usuario getUsuario() {
-        return usuario;
+    public int getIdUsuario() {
+        return usuario.getIdUsuario();
     }
 
-    public void setUsuario(com.example.refugiohotelsapp.Entidades.usuario usuario) {
+    public void setIdUsuario() {
         this.usuario = usuario;
     }
 }

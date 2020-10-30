@@ -19,7 +19,7 @@ public class DBCore extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase bd) {
-        bd.execSQL("create table usuario" +
+        bd.execSQL("create table Usuario" +
                 "(idUsuario integer primary key autoincrement, nome text not null, email text not null," +
                 " senha text not null)");
         bd.execSQL("create table reserva"+
@@ -31,7 +31,7 @@ public class DBCore extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase bd, int arg1, int arg2) {
-        bd.execSQL("drop table usuario;");
+        bd.execSQL("drop table Usuario;");
         bd.execSQL("drop table reserva;");
         onCreate(bd);
 
