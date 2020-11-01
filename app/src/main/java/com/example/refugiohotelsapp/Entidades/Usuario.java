@@ -1,24 +1,28 @@
 package com.example.refugiohotelsapp.Entidades;
 
- class Usuario {
+ public class Usuario {
 
-    private Integer idUsuario;
+    private Long idUsuario;
     private String nome;
     private String email;
     private String senha;
 
-    public Usuario(Integer idUsuario, String nome, String email, String senha) {
+    public Usuario(Long idUsuario, String nome, String email, String senha) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
     }
 
-    public Integer getIdUsuario() {
+    public Usuario(){
+
+    }
+
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 

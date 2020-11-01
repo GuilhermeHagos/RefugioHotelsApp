@@ -20,7 +20,7 @@ public class DBCore extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase bd) {
         bd.execSQL("create table Usuario" +
-                "(idUsuario integer primary key autoincrement, nome text not null, email text not null," +
+                "(idUsuario Long primary key autoincrement, nome text not null, email text not null," +
                 " senha text not null)");
         bd.execSQL("create table reserva"+
                 "(idReserva intenger primary key autoincrement," +
