@@ -2,7 +2,7 @@ package com.example.refugiohotelsapp.Entidades;
 
 import java.util.Date;
 
-    class Reserva {
+    public class Reserva {
     private int idReserva;
     private Date dataInicio;
     private Date dataFim;
