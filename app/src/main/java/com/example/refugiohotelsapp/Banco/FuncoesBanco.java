@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-class FuncoesBanco {
+public class FuncoesBanco {
 //reliza funções do crud, insert, read, update e delete a respeito da Entidade Usuario
      private SQLiteDatabase bd;
 

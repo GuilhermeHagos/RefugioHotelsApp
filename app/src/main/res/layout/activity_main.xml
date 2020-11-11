@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/email"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:text="Email"
@@ -22,7 +23,7 @@
         android:inputType="textEmailAddress" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Senha"
@@ -36,9 +37,10 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="logarUsuario"
         android:text="Login" />
 
     <TextView
@@ -52,9 +54,10 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonCadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="cadastrarUsuario"
         android:text="Cadastre-se" />
 
 </LinearLayout>
