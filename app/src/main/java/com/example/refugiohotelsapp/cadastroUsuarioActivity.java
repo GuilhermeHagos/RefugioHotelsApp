@@ -22,27 +22,30 @@ public class cadastroUsuarioActivity  extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_Usuario);
-        nomeEt = (EditText) findViewById(R.id.nome);
-        emailEt = (EditText) findViewById(R.id.email);
-        senhaEt = (EditText) findViewById(R.id.senha);
-        salvarBt = (Button) findViewById(R.id.button1);
-        editarBt = (Button) findViewById(R.id.button2);
+        setContentView(R.layout.activity_new_usuario);
+        nomeEt = (EditText) findViewById(R.id.editTextTextNome);
+        emailEt = (EditText) findViewById(R.id.editTextTextEmailAddress);
+        senhaEt = (EditText) findViewById(R.id.editTextTextPassword);
+        salvarBt = (Button) findViewById(R.id.buttonCadastro);
+        editarBt = (Button) findViewById(R.id.buttonEditar);
         Intent intent = getIntent();
         if(intent != null){
             Bundle bundle = intent.getExtras();
             if(bundle != null){
-                usuario.setId(bundle.getLong("id"));
+                usuario.setIdUsuario(bundle.getLong("idUsuario"));
                 usuario.setNome(bundle.getString("nome"));
                 usuario.setEmail(bundle.getString("email"));
+                usuario.setSenha(bundle.getString("senha"));
                 nomeEt.setText(usuario.getNome());
                 emailEt.setText(usuario.getEmail());
+                senhaEt.setText(usuario.getSenha());
                 senhaEt.setVisibility(View.GONE);
                 salvarBt.setVisibility(View.GONE);
                 editarBt.setVisibility(View.VISIBLE);
             }
         }
     }
+    //Inserindo Usuário no banco
     public void salvarUsuario(View view){
         usuario.setNome(nomeEt.getText().toString());
         usuario.setEmail(emailEt.getText().toString());
@@ -54,13 +57,15 @@ public class cadastroUsuarioActivity  extends Activity {
         Intent intent = new Intent(this, homeActivity.class);
         startActivity(intent);
     }
+    // Editando Usuário
     public void editarUsuario(View view){
         usuario.setNome(nomeEt.getText().toString());
         usuario.setEmail(emailEt.getText().toString());
+        usuario.setSenha(senhaEt.getText().toString());
         FuncoesBanco bd = new FuncoesBanco(this);
         bd.atualizarUsuario(usuario);
-        Toast.makeText(this, "Usuário \""+usuario.getNome()+\" atualizado
-                com sucesso., Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Usuário \""+usuario.getNome()+" atualizado com sucesso."
+                , Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, homeActivity.class);
         startActivity(intent);
     }
