@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             Button bt = (Button) view;
             Intent intent;
 
-            if (bt.getText().toString().equalsIgnoreCase("Cadastre-se")) {
+            if (bt.getText().toString().equalsIgnoreCase("Cadastro")) {
                 intent = new Intent(this, cadastroUsuarioActivity.class);
             } else {
                 //intent = new Intent(this, loginUsarioActivity.class);

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.refugiohotelsapp.Banco.FuncoesBanco;
@@ -18,11 +19,17 @@ public class cadastroUsuarioActivity  extends Activity {
     private EditText senhaEt;
     private Button salvarBt;
     private Button editarBt;
+    private TextView nomeTE;
+    private TextView emailTE;
+    private TextView senhaTE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_usuario);
+          nomeTE = (TextView) findViewById(R.id.nome);
+          emailTE =(TextView) findViewById(R.id.email);
+          senhaTE = (TextView) findViewById(R.id.senha);
         nomeEt = (EditText) findViewById(R.id.editTextTextNome);
         emailEt = (EditText) findViewById(R.id.editTextTextEmailAddress);
         senhaEt = (EditText) findViewById(R.id.editTextTextPassword);
@@ -42,6 +49,9 @@ public class cadastroUsuarioActivity  extends Activity {
                 senhaEt.setVisibility(View.GONE);
                 salvarBt.setVisibility(View.GONE);
                 editarBt.setVisibility(View.VISIBLE);
+                nomeTE.setVisibility(View.VISIBLE);
+                emailTE.setVisibility(View.VISIBLE);
+                senhaTE.setVisibility(View.VISIBLE);
             }
         }
     }
