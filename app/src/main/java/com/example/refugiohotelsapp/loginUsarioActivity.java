@@ -1,4 +1,6 @@
 package com.example.refugiohotelsapp;
 
-public class loginUsarioActivity {
+import android.app.Activity;
+
+public class loginUsarioActivity extends Activity {
 }
