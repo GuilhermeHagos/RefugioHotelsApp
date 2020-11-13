@@ -2,12 +2,12 @@ package com.example.refugiohotelsapp.Entidades;
 
  public class Usuario {
 
-    private Long idUsuario;
+    private Integer idUsuario;
     private String nome;
     private String email;
     private String senha;
 
-    public Usuario(Long idUsuario, String nome, String email, String senha) {
+    public Usuario(Integer idUsuario, String nome, String email, String senha) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.email = email;
@@ -18,11 +18,11 @@ package com.example.refugiohotelsapp.Entidades;
 
     }
 
-    public Long getIdUsuario() {
+    public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 

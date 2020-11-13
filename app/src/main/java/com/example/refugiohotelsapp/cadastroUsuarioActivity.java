@@ -17,7 +17,7 @@ public class cadastroUsuarioActivity  extends Activity {
     private EditText nomeEt;
     private EditText emailEt;
     private EditText senhaEt;
-    private Button salvarBt;
+    private Button buttonCadastro;
     private Button editarBt;
     private TextView nomeTE;
     private TextView emailTE;
@@ -33,13 +33,13 @@ public class cadastroUsuarioActivity  extends Activity {
         nomeEt = (EditText) findViewById(R.id.editTextTextNome);
         emailEt = (EditText) findViewById(R.id.editTextTextEmailAddress);
         senhaEt = (EditText) findViewById(R.id.editTextTextPassword);
-        salvarBt = (Button) findViewById(R.id.buttonCadastro);
+        buttonCadastro = (Button) findViewById(R.id.buttonCadastro);
         editarBt = (Button) findViewById(R.id.buttonEditar);
         Intent intent = getIntent();
         if(intent != null){
             Bundle bundle = intent.getExtras();
             if(bundle != null){
-                usuario.setIdUsuario(bundle.getLong("idUsuario"));
+                usuario.setIdUsuario(bundle.getInt("idUsuario"));
                 usuario.setNome(bundle.getString("nome"));
                 usuario.setEmail(bundle.getString("email"));
                 usuario.setSenha(bundle.getString("senha"));
@@ -47,15 +47,19 @@ public class cadastroUsuarioActivity  extends Activity {
                 emailEt.setText(usuario.getEmail());
                 senhaEt.setText(usuario.getSenha());
                 senhaEt.setVisibility(View.GONE);
-                salvarBt.setVisibility(View.GONE);
+                buttonCadastro.setVisibility(View.GONE);
                 editarBt.setVisibility(View.VISIBLE);
                 nomeTE.setVisibility(View.VISIBLE);
                 emailTE.setVisibility(View.VISIBLE);
                 senhaTE.setVisibility(View.VISIBLE);
             }
         }
+
+
     }
     //Inserindo Usuário no banco
+
+
     public void salvarUsuario(View view){
         usuario.setNome(nomeEt.getText().toString());
         usuario.setEmail(emailEt.getText().toString());

@@ -115,7 +115,7 @@ import java.util.Date;
         this.reservaAtiva = reservaAtiva;
     }
 
-    public Long getIdUsuario() {
+    public Integer getIdUsuario() {
         return usuario.getIdUsuario();
     }
 

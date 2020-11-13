@@ -1,28 +1,37 @@
 package com.example.refugiohotelsapp.Banco;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+
+import com.example.refugiohotelsapp.Entidades.Reserva;
+import com.example.refugiohotelsapp.Entidades.Usuario;
+import com.example.refugiohotelsapp.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import com.example.refugiohotelsapp.Entidades.Usuario;
-import com.example.refugiohotelsapp.Entidades.Reserva;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class FuncoesBanco {
-//reliza funções do crud, insert, read, update e delete a respeito da Entidade Usuario
-     private SQLiteDatabase bd;
+public class FuncoesBanco extends AppCompatActivity {
+
+    //reliza funções do crud, insert, read, update e delete a respeito da Entidade Usuario
+    private SQLiteDatabase bd;
 
     public FuncoesBanco(Context context){
         DBCore auxBd = new DBCore(context);
         bd = auxBd.getWritableDatabase();
+    }
+
+    public FuncoesBanco(){
+
     }
     //Inserir Usuario na tabela Usuario
     public void inserirUsuario(Usuario usuario){
@@ -30,8 +39,15 @@ public class FuncoesBanco {
         valores.put("nome",usuario.getNome());
         valores.put("email", usuario.getEmail());
         valores.put("senha",usuario.getSenha());
-
-        bd.insert("Usuario",null,valores);
+    try {
+        bd.insert("Usuario", null, valores);
+    } catch (SQLException ex){
+        AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+        dlg.setTitle(R.string.title_erro);
+        dlg.setMessage(ex.getMessage());
+        dlg.setNeutralButton(R.string.action_ok, null);
+        dlg.show();
+    }
     }
     //update na tabela Usuario
     public void atualizarUsuario(Usuario usuario){
@@ -60,7 +76,7 @@ public class FuncoesBanco {
 
             do{
                 Usuario u = new Usuario();
-                u.setIdUsuario(cursor.getLong(0));
+                u.setIdUsuario(cursor.getInt(0));
                 u.setNome(cursor.getString(1));
                 u.setEmail(cursor.getString(2));
                 u.setSenha(cursor.getString(3));
@@ -109,7 +125,7 @@ public class FuncoesBanco {
     public void deletarReserva(Reserva reserva){
         bd.delete("Reserva","idReserva = "+ reserva.getIdReserva(),null);
     }
-//Listar reserva, checar clausula para listar somente as reservas daquele usuario
+    //Listar reserva, checar clausula para listar somente as reservas daquele usuario
     public List<Reserva> ListarReserva(){
         List<Reserva> list = new ArrayList<Reserva>();
         String[] colunas = new String[]{"idReserva","dataInicio","dataFim","quantidadeAdultos","quantidadeCriancas","valorReserva","metodoPagamento"};

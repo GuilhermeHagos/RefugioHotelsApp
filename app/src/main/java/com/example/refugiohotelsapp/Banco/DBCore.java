@@ -1,12 +1,8 @@
 package com.example.refugiohotelsapp.Banco;
 
 import android.content.Context;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 
 public class DBCore extends SQLiteOpenHelper {
@@ -19,14 +15,12 @@ public class DBCore extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase bd) {
-        bd.execSQL("create table Usuario" +
-                "(idUsuario Long primary key autoincrement, nome text not null, email text not null," +
-                " senha text not null)");
-        bd.execSQL("create table Reserva"+
+        bd.execSQL("create table Usuario (idUsuario Integer primary key autoincrement, nome text not null, email text not null, senha text not null);");
+        /*bd.execSQL("create table Reserva"+
                 "(idReserva intenger primary key autoincrement," +
                 "dataInicio date not null, dataFim date not null, quantidadeAdultos int not null, quantidadeCriancas int not null,"+
                 "valorReserva float not null, metodoPagamento varchar not null, reservaAtiva boolean not null,"+
-                "idUsuario intenger not null,FOREIGN KEY (\"+idUsuario+\") REFERENCES \"+usuario+\"(\"+idUsuario+\"))");
+                "idUsuario intenger not null,FOREIGN KEY (\"+idUsuario+\") REFERENCES \"+usuario+\"(\"+idUsuario+\"))");*/
     }
 
     @Override

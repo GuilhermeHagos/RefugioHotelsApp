@@ -28,6 +28,10 @@ public class UsuarioAdapter extends BaseAdapter {
         this.list = list;
     }
 
+    public UsuarioAdapter() {
+
+    }
+
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
