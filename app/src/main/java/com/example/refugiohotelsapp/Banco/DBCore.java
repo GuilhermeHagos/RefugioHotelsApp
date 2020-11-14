@@ -16,11 +16,11 @@ public class DBCore extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase bd) {
         bd.execSQL("create table Usuario (idUsuario Integer primary key autoincrement, nome text not null, email text not null, senha text not null);");
-        /*bd.execSQL("create table Reserva"+
-                "(idReserva intenger primary key autoincrement," +
-                "dataInicio date not null, dataFim date not null, quantidadeAdultos int not null, quantidadeCriancas int not null,"+
+        bd.execSQL("create table Reserva"+
+                "(idReserva Integer primary key autoincrement," +
+                "dataInicio Long not null, dataFim Long not null, quantidadeAdultos int not null, quantidadeCriancas int not null,"+
                 "valorReserva float not null, metodoPagamento varchar not null, reservaAtiva boolean not null,"+
-                "idUsuario intenger not null,FOREIGN KEY (\"+idUsuario+\") REFERENCES \"+usuario+\"(\"+idUsuario+\"))");*/
+                "idUsuario Integer not null,FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario));");
     }
 
     @Override

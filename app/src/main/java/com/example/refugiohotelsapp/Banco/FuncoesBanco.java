@@ -91,7 +91,7 @@ public class FuncoesBanco extends AppCompatActivity {
     //Funções de Banco para classe Reserva
 
     //Criando nova reserva
-    public void inserirReserva(Reserva reserva){
+    public void inserirReserva(Reserva reserva ){
         ContentValues valores = new ContentValues();
         valores.put("dataInicio", reserva.getDataInicio().toString());
         valores.put("dataFim", reserva.getDataFim().toString());
@@ -100,9 +100,19 @@ public class FuncoesBanco extends AppCompatActivity {
         valores.put("valorReserva", reserva.getValorReserva());
         valores.put("metodoPagamento", reserva.getMetodoPagamento());
         valores.put("ReservaAtiva", reserva.isReservaAtiva());
-        valores.put("idUsuario", reserva.getIdUsuario());
+        //valores.put("idUsuario", usuario.getIdUsuario());
 
-        bd.insert("Reserva",null,valores);
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT *");
+        sql.append("FROM Usuario");
+
+        Cursor resultado = bd.rawQuery(sql.toString(),null);
+
+
+
+        valores.put("idUsuario", String.valueOf(resultado));
+
+        bd.insert("Reserva",null, valores);
     }
     //Atualizando dados da Reserva
     public void atualizarReserva(Reserva reserva){

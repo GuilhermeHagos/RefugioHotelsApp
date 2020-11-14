@@ -89,6 +89,9 @@ public class ReservaActivity extends AppCompatActivity {
 
         button5 = (Button) findViewById(R.id.button5);
         button4 = (Button) findViewById(R.id.button4);
+
+        Intent intent = getIntent();
+        int idUsuario = intent.getIntExtra("idUsuario",0);
     }
 
     //Criando e Inserindo Reserva
