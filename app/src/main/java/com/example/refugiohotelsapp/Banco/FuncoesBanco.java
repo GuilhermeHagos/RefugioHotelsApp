@@ -126,7 +126,7 @@ public class FuncoesBanco extends AppCompatActivity {
         bd.delete("Reserva","idReserva = "+ reserva.getIdReserva(),null);
     }
     //Listar reserva, checar clausula para listar somente as reservas daquele usuario
-    public List<Reserva> ListarReserva(){
+    /*public List<Reserva> ListarReserva(){
         List<Reserva> list = new ArrayList<Reserva>();
         String[] colunas = new String[]{"idReserva","dataInicio","dataFim","quantidadeAdultos","quantidadeCriancas","valorReserva","metodoPagamento"};
 
@@ -165,6 +165,6 @@ public class FuncoesBanco extends AppCompatActivity {
             while(cursor.moveToNext());
         }
         return(list);
-    }
+    }*/
 
 }

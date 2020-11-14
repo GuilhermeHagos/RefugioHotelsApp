@@ -4,17 +4,17 @@ import java.util.Date;
 
     public class Reserva {
     private int idReserva;
-    private Date dataInicio;
-    private Date dataFim;
-    private int quantidadeAdultos;
-    private int quantidadeCriancas;
+    private Long dataInicio;
+    private Long dataFim;
+    private String quantidadeAdultos;
+    private String quantidadeCriancas;
     private float valorReserva;
     private String metodoPagamento;
     private boolean reservaAtiva;
     private Usuario usuario;
 
     //Construtor utilizado para trazer o objeto reserva do banco
-    public Reserva(int idReserva, Date dataInicio, Date dataFim, int quantidadeAdultos, int quantidadeCriancas,
+    public Reserva(int idReserva, Long dataInicio, Long dataFim, String quantidadeAdultos, String quantidadeCriancas,
                    float valorReserva, String metodoPagamento, boolean reservaAtiva, Usuario usuario) {
         this.idReserva = idReserva;
         this.dataInicio = dataInicio;
@@ -30,7 +30,7 @@ import java.util.Date;
     }
 
     //Construtor utilizado para criar o objeto reserva em banco
-    public Reserva(Date dataInicio, Date dataFim, int quantidadeAdultos, int quantidadeCriancas,
+    public Reserva(Long dataInicio, Long dataFim, String quantidadeAdultos, String quantidadeCriancas,
                    float valorReserva, String metodoPagamento, Usuario usuario) {
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
@@ -59,35 +59,35 @@ import java.util.Date;
         this.idReserva = idReserva;
     }
 
-    public Date getDataInicio() {
+    public Long getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(Date dataInicio) {
+    public void setDataInicio(Long dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public Date getDataFim() {
+    public Long getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(Date dataFim) {
+    public void setDataFim(Long dataFim) {
         this.dataFim = dataFim;
     }
 
-    public int getQuantidadeAdultos() {
+    public String getQuantidadeAdultos() {
         return quantidadeAdultos;
     }
 
-    public void setQuantidadeAdultos(int quantidadeAdultos) {
+    public void setQuantidadeAdultos(String quantidadeAdultos) {
         this.quantidadeAdultos = quantidadeAdultos;
     }
 
-    public int getQuantidadeCriancas() {
+    public String getQuantidadeCriancas() {
         return quantidadeCriancas;
     }
 
-    public void setQuantidadeCriancas(int quantidadeCriancas) {
+    public void setQuantidadeCriancas(String quantidadeCriancas) {
         this.quantidadeCriancas = quantidadeCriancas;
     }
 
