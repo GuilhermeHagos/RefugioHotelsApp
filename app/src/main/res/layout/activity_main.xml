@@ -50,7 +50,7 @@
         android:background="#C1534F4F"
         android:singleLine="false"
         android:soundEffectsEnabled="false"
-        android:text="                                          Ou"
+        android:text="                                         Ou"
         android:textSize="18sp" />
 
     <Button

@@ -102,7 +102,8 @@ public class FuncoesBanco extends AppCompatActivity {
         valores.put("ReservaAtiva", reserva.isReservaAtiva());
         //valores.put("idUsuario", usuario.getIdUsuario());
 
-        StringBuilder sql = new StringBuilder();
+        valores.put("idUsuario", reserva.getIdUsuario());
+        /*StringBuilder sql = new StringBuilder();
         sql.append("SELECT *");
         sql.append("FROM Usuario");
 
@@ -111,9 +112,11 @@ public class FuncoesBanco extends AppCompatActivity {
 
 
         valores.put("idUsuario", String.valueOf(resultado));
-
+*/
         bd.insert("Reserva",null, valores);
     }
+
+
     //Atualizando dados da Reserva
     public void atualizarReserva(Reserva reserva){
         ContentValues valores = new ContentValues();
@@ -135,6 +138,8 @@ public class FuncoesBanco extends AppCompatActivity {
     public void deletarReserva(Reserva reserva){
         bd.delete("Reserva","idReserva = "+ reserva.getIdReserva(),null);
     }
+
+
     //Listar reserva, checar clausula para listar somente as reservas daquele usuario
     /*public List<Reserva> ListarReserva(){
         List<Reserva> list = new ArrayList<Reserva>();

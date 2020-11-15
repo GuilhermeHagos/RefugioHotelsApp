@@ -14,9 +14,9 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_width="126dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/hotel" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,10 +55,10 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
+            android:layout_width="126dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:src="@drawable/fazenda" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -79,8 +79,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:text="Planos a partir de 1500R$"
-                android:textSize="16sp"/>
+                android:text="Planos a partir de 2000R$"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/button2"
@@ -93,19 +93,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="126dp"
+            android:layout_height="147dp"
             android:layout_weight="0"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:src="@drawable/sitio" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="130dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -122,8 +122,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:text="Planos a partir de 1500R$"
-                android:textSize="16sp"/>
+                android:text="Planos a partir de 2000R$"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/button3"

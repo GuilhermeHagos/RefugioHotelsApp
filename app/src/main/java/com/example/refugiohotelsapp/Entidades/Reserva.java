@@ -12,10 +12,10 @@ import java.util.Date;
     private String metodoPagamento;
     private boolean reservaAtiva;
     private Usuario usuario;
-
+    private int idUsuario;
     //Construtor utilizado para trazer o objeto reserva do banco
     public Reserva(int idReserva, Long dataInicio, Long dataFim, String quantidadeAdultos, String quantidadeCriancas,
-                   float valorReserva, String metodoPagamento, boolean reservaAtiva, Usuario usuario) {
+                   float valorReserva, String metodoPagamento, boolean reservaAtiva, int idUsuario) {
         this.idReserva = idReserva;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
@@ -25,7 +25,8 @@ import java.util.Date;
         this.metodoPagamento = metodoPagamento;
         //pensar na lógica booleana da flag reservaAtiva, instânciar o objeto já com a flag ativa em 1?
         //pensar e criar função para alterar estado quando a reserva for cancelada
-        this.usuario = usuario;
+        //this.usuario = usuario;
+        this.idUsuario = idUsuario;
         this.reservaAtiva = true;
     }
 
@@ -38,7 +39,8 @@ import java.util.Date;
         this.quantidadeCriancas = quantidadeCriancas;
         this.valorReserva = valorReserva;
         this.metodoPagamento = metodoPagamento;
-        this.usuario = usuario;
+       // this.usuario = usuario;
+        this.idUsuario = idUsuario;
         this.reservaAtiva = true;
 
     }
@@ -116,10 +118,14 @@ import java.util.Date;
     }
 
     public Integer getIdUsuario() {
-        return usuario.getIdUsuario();
+        return idUsuario;
     }
 
-    public void setIdUsuario() {
+    /*public void setIdUsuario() {
         this.usuario = usuario;
-    }
+    }*/
+
+        public void setIdUsuario(int  idUsuario) {
+            this.idUsuario = idUsuario;
+        }
 }

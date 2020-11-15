@@ -102,6 +102,7 @@ public class ReservaActivity extends AppCompatActivity {
         reserva.setDataFim(calendarView5.getDate());
         reserva.setMetodoPagamento(editTextMetodoPagamento.getText().toString());
         reserva.setValorReserva(2000);
+        reserva.setIdUsuario(41);
         FuncoesBanco bd = new FuncoesBanco(this);
         bd.inserirReserva(reserva);
         Toast.makeText(this, "Reserva inserida com sucesso!",
